@@ -1,0 +1,31 @@
+{
+
+    "manifest_version": 2,
+    "name": "PaperDownload",
+    "version": "1.0",
+  
+    "description": "Adds a red border to all webpages matching mozilla.org.",
+    "homepage_url": "https://github.com/greatofdream/paperstorepulgin.git",
+
+    "icons": {
+      "48": "icons/border-48.png"
+    },
+  
+    "permissions": [
+        "activeTab"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/menu-32.png",
+        "default_title": "Download",
+        "default_popup": "popup/choose_page.html"
+      },
+
+    "content_scripts": [
+      {
+        "matches": ["*://reserves.lib.tsinghua.edu.cn/*"],
+        "js": ["borderify.js"]
+      }
+    ]
+  
+  }
